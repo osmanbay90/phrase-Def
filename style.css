@@ -1,0 +1,162 @@
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
+    color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 35px 45px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    max-width: 650px;
+    width: 90%;
+    position: relative; /* Needed for SVG positioning */
+    overflow: hidden; /* Hide SVG overflow */
+}
+
+h1 {
+    color: #1a5f7a; /* Darker cyan */
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#wordInput {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#searchButton {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #00bcd4, #0097a7); /* Cyan gradient */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 151, 167, 0.3);
+}
+
+#searchButton:hover {
+    background: linear-gradient(45deg, #00acc1, #00838f);
+    box-shadow: 0 4px 8px rgba(0, 151, 167, 0.4);
+    transform: translateY(-2px);
+}
+
+#searchButton:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 151, 167, 0.2);
+}
+
+/* Loading Spinner Styles */
+.loader {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #00bcd4; /* Cyan */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 25px auto; /* Center the loader */
+    display: none; /* Hidden by default */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* End Loading Spinner Styles */
+
+.results-container {
+    margin-top: 10px; /* Reduced margin-top to accommodate loader */
+    text-align: left;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 25px;
+    animation: fadeIn 0.5s ease-out forwards; /* Apply fade-in animation */
+}
+
+.result-section {
+    background-color: #f1f8e9; /* Light green background */
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border-left: 5px solid #8bc34a; /* Green accent */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.result-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.result-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #558b2f; /* Darker green */
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.result-section p {
+    margin: 0;
+    line-height: 1.7;
+    color: #555;
+}
+
+.hidden {
+    display: none; /* Use display none again for simplicity with loader logic */
+}
+
+.svg-decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Adjust height as needed */
+    pointer-events: none; /* Allow clicks through */
+    z-index: -1; /* Place behind content */
+}
+
+.svg-decoration svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styles for the Analyzer Link Button */
+.analyzer-link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.analyzer-link-button:hover {
+    background-color: #333;
+}

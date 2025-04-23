@@ -1,0 +1,54 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="text-analyzer.html" class="analyzer-link-button">Text Analyzer</a>
+        <h1>Word Explorer</h1>
+        <div class="search-box">
+            <input type="text" id="wordInput" placeholder="Enter a word, phrase, or sentence...">
+            <button id="searchButton">Explore</button>
+        </div>
+        <div class="loader" id="loader"></div> <!-- Added Loader Element -->
+        <div id="results" class="results-container hidden">
+             <button id="saveWordButton" class="save-button hidden" title="Save Word">💾</button> <!-- Save Button -->
+             <h2 id="searchedTerm" class="searched-term-title">Results for: <span></span></h2> <!-- Title to show searched term -->
+             <div class="result-section">
+                <h2>Meaning</h2>
+                <p id="meaningResult">-</p>
+            </div>
+            <div class="result-section">
+                <h2>Usage Example</h2>
+                <p id="exampleResult">-</p>
+            </div>
+            <div class="result-section">
+                <h2>Cultural Context</h2>
+                <p id="contextResult">-</p>
+            </div>
+        </div>
+        <!-- Placeholder for SVG -->
+        <div class="svg-decoration">
+            <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M0 50 C 360 100, 1080 0, 1440 50 L 1440 100 L 0 100 Z" fill="#e0f7fa"/>
+                <path d="M0 60 C 360 110, 1080 10, 1440 60 L 1440 100 L 0 100 Z" fill="#b2ebf2" fill-opacity="0.5"/>
+                <path d="M0 70 C 360 120, 1080 20, 1440 70 L 1440 100 L 0 100 Z" fill="#80deea" fill-opacity="0.3"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Saved Words Section -->
+    <div id="savedWordsSection" class="saved-words-container hidden">
+        <h2>Saved Words</h2>
+        <ul id="savedWordsList">
+            <!-- Saved words will be listed here -->
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
